@@ -23,7 +23,7 @@
     >
         <template slot="title">
             <icon-svg
-                v-if="clontItem.menuIcon"
+                v-if="cloneItem.menuIcon"
                 :icon-class="cloneItem.menuIcon"
             />
             <icon-svg
@@ -47,6 +47,7 @@
 
 <script>
 export default {
+    name: 'MenuItem',
     props: {
         item: {
             type: Object,

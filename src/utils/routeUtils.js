@@ -3,6 +3,7 @@
  *
  * sunlandong
  */
+import TheDefault from '@/layout/TheDefault'
 
 // 把字符串转化成懒加载方法
 function lazyLoading(name) {
@@ -12,21 +13,25 @@ function lazyLoading(name) {
 // 递归生成菜单
 function generateMenu(routes, data) {
   data.forEach((item) => {
-    const menu = Object.assign({}, item)
-    if (menu.type === 'M') {
-      menu.filePath = 'layout/TheDefault'
+    const menu = { meta: { icon: 'menu' } }
+    menu.path = item.path
+    menu.type = item.type
+    if (item.type === 1) {
+      menu.component = TheDefault
+    } else if (item.filePath) {
+      menu.component = lazyLoading(item.filePath)
     }
 
-    if (menu.filePath) {
-      menu.component = lazyLoading(menu.filePath)
+    if (item.icon) {
+      menu.meta.icon = item.icon
+    }
+    if (item.name) {
+      menu.meta.title = item.name
+    }
+    if (item.hidden) {
+      menu.hidden = item.hidden
     }
 
-    if (menu.meta && menu.meta.prop) {
-      menu.prop = menu.meta.prop
-    }
-    if (menu.meta && menu.meta.hidden) {
-      menu.hidden = menu.meta.hidden
-    }
     if (item.children) {
       menu.children = []
       generateMenu(menu.children, item.children)

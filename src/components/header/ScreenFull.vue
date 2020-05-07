@@ -20,13 +20,13 @@ export default {
     },
     methods: {
         changeScreen() {
-            if (!screenfull.enabled) {
+            if (!screenfull.isEnabled) {
                 return false
             }
             screenfull.toggle()
         },
         init() {
-            if (screenfull.enabled) {
+            if (screenfull.isEnabled) {
                 screenfull.on('change', () => {
                     this.isFullscreen = screenfull.isFullscreen
                 })

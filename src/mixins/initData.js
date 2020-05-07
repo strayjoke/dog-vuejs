@@ -27,7 +27,7 @@ export default {
                 }
             })
         },
-        pateChange(e) {
+        pageChange(e) {
             this.page = e
             this.init()
         },

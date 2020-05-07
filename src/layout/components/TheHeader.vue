@@ -13,6 +13,7 @@
 
         <div class="right-menu">
             <screen-full class="right-menu-item" />
+            <auth-setting class="right-menu-item" />
         </div>
     </el-header>
 </template>
@@ -20,22 +21,24 @@
 <script>
 import BreadCrumb from '@/components/header/BreadCrumb'
 import ScreenFull from '@/components/header/ScreenFull'
+import AuthSetting from '@/components/header/AuthSetting'
 
 export default {
     components: {
         BreadCrumb,
         ScreenFull,
+        AuthSetting
     },
     computed: {
         isCollapse() {
-            return this.$store.state.common.isCollapseNav
+            return this.$store.state.isCollapseNav
         }
     },
     methods: {
         toggleClick() {
+            console.log(111)
             this.$store.commit('SET_IS_COLLAPSE_NAV', !this.isCollapse)
-        },
-
+        }
     }
 }
 </script>

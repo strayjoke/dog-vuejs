@@ -1,17 +1,13 @@
-import permissions from '@/permissions'
+import store from '@/store'
 
 const checkBtnPermission = (value) => {
-    const btnPerms = permissions.state.btnPermissions
-    const loginId = permissions.info.id
+    const auth = store.state.auth //权限
+    const btnPerms = auth.permissions.btnPermissions
     let result = false
-    if (loginId === 1) {
-        result = true
-    } else {
-        if (btnPerms && btnPerms instanceof Array && btnPerms.length > 0) {
-            result = btnPerms.some((item) => {
-                return value === item
-            })
-        }
+    if (btnPerms && btnPerms instanceof Array && btnPerms.length > 0) {
+        result = btnPerms.some((item) => {
+            return value === item
+        })
     }
     return result
 }

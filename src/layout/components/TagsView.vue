@@ -118,7 +118,7 @@ export default {
                     this.tagsList.shift()
                 }
                 this.tagsList.push({
-                    title: route.name,
+                    title: route.meta.title,
                     path: route.fullPath,
                     parent: oldRoute
                 })

@@ -1,8 +1,8 @@
-import request from './request.js'
+import request from '@/utils/request.js'
 
 export function getRoleList(query) {
     return request({
-        url: '/api/roleList',
+        url: '/roleList',
         method: 'get',
         params: query
     })

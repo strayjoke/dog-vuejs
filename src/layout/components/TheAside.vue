@@ -29,7 +29,6 @@
 <script>
 import { mapState } from 'vuex'
 import MenuItem from './MenuItem'
-import permissions from '@/permissions'
 import '@/components/menu-icons/requireIcons.js'
 
 export default {
@@ -38,14 +37,14 @@ export default {
     },
     computed: {
         ...mapState({
-            asideWidth: state => (state.common.isCollapseNav === 1 ? '60px' : '200px'),
-            isCollapse: state => state.common.isCollapseNav === 1
+            asideWidth: state => (state.isCollapseNav === true ? '60px' : '200px'),
+            isCollapse: state => state.isCollapseNav === true
         }),
-        sideBar: () => {
+        sideBar() {
             let sideBar = []
-            permissions.state.routes.forEach(item => {
+            this.$store.state.auth.routes.forEach(item => {
                 if (item.path === '/') {
-                    sideBar = item.children
+                    sideBar = sideBar.concat(item.children)
                 }
             })
             return sideBar

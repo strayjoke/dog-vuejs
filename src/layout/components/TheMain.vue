@@ -26,7 +26,7 @@ export default {
     height: calc(100% - 30px);
     position: relative;
     transition: width 0.3s ease-in-out;
-    padding: 0;
+    padding: 0 !important;
 
     .container {
         height: calc(100% - 30px);

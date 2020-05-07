@@ -5,7 +5,7 @@ heroText: dog-vuejs
 sidebar: auto
 tagline: 一个使用 vuejs 和 element-ui 开发的管理系统
 actionText: 快速上手 →
-actionLink: /introduction
+actionLink: /appreciate/
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。

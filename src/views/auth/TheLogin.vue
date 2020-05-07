@@ -20,6 +20,7 @@
                     <el-input
                         v-model.trim="form.password"
                         placeholder="密码"
+                        type="password"
                     />
                 </el-form-item>
                 <div class="login-btn">
@@ -44,7 +45,7 @@ export default {
         return {
             form: {
                 name: 'admin',
-                password: 'admin'
+                password: '123456'
             },
             rules: {
                 name: [
@@ -55,17 +56,6 @@ export default {
                 ]
             },
             isLoading: false
-        }
-    },
-    watch: {
-        $route(to, from) {
-            // 监听参数变化
-            location.reload()
-        }
-    },
-    mounted() {
-        if (this.$route.query.from === 'logout') {
-            this.$router.push({ path: '/login', replace: true })
         }
     },
     methods: {
@@ -79,7 +69,7 @@ export default {
                     })
                         .then(() => {
                             this.isLoading = false
-                            this.$router.push(this.$route.query.r || '/')
+                            this.$router.push('/')
                         })
                         .catch(() => {
                             this.isLoading = false

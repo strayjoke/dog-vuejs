@@ -1,4 +1,4 @@
-import request from './request.js'
+import request from '@/utils/request.js'
 
 export function initData(url, params) {
     return request({
