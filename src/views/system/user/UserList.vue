@@ -60,12 +60,11 @@
                     min-width="200"
                 />
                 <el-table-column label="操作">
-                    <template slot-scope="scope">
+                    <template>
                         <el-button
-                            v-if="showEditBtn"
                             size="mini"
                             type="success"
-                            @click="editUser(scope.row)"
+                            disabled
                         >
                             编辑
                         </el-button>
@@ -88,7 +87,6 @@
 <script>
 import initData from '@/mixins/initData'
 export default {
-    dicts: ['sys_normal_disable'],
     mixins: [initData],
     data() {
         return {

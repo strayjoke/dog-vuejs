@@ -12,9 +12,9 @@ import '@/icons'
 
 import * as filters from '@/filters'
 
-// import Mock from '@/mock'
+import Mock from '@/mock'
 
-// Mock.mockData()
+Mock.mockData()
 
 //注册全局过滤器
 Object.keys(filters).forEach(key => {

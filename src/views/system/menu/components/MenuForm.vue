@@ -26,7 +26,6 @@
                         v-model="form.parentName"
                         :disabled="isDisabled"
                         style="width:400px;"
-                        @focus="showMenu"
                     >
                         <el-button
                             slot="append"
@@ -146,7 +145,6 @@
                 <el-button
                     type="primary"
                     disabled
-                    @click="submit"
                 >确 定</el-button>
             </span>
         </el-dialog>

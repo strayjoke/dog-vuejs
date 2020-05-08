@@ -91,7 +91,6 @@ export default {
         this.$nextTick(() => {
             this.init()
         })
-        this.selectDictType()
     },
     methods: {
         beforeInit() {
