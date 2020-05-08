@@ -2,6 +2,7 @@
     <el-dropdown
         trigger="click"
         class="auth-settings"
+        :hide-on-click="false"
         @command="handleCommand"
     >
         <div class="el-dropdown-link admin-avatar">
@@ -11,12 +12,17 @@
             </span>
         </div>
         <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="userInfo">
+            <el-dropdown-item
+                command="userInfo"
+                disabled
+            >
                 个人信息
             </el-dropdown-item>
             <el-dropdown-item
+                v-loading="isLoading"
                 divided
                 command="logout"
+                element-loading-spinner="el-icon-loading"
             >
                 退出
             </el-dropdown-item>
@@ -28,14 +34,17 @@
 export default {
     data() {
         return {
-            name: this.$store.state.auth.user.name
+            name: this.$store.state.auth.user.name,
+            isLoading: false
         }
     },
     methods: {
         handleCommand(command) {
             switch (command) {
                 case 'logout':
+                    this.isLoading = true
                     this.$store.dispatch('logout').then(() => {
+                        this.isLoading = false
                         this.$router.push({ path: '/login' })
                     })
                     break

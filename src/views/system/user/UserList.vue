@@ -19,6 +19,7 @@
                     size="medium"
                     round
                     icon="el-icon-search"
+                    disabled
                     @click="queryData"
                 >
                     查询

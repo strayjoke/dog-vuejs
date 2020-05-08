@@ -19,6 +19,7 @@
                     size="medium"
                     round
                     icon="el-icon-search"
+                    disabled
                     @click="queryData"
                 >
                     查询
@@ -119,13 +120,24 @@
         </el-table-column> -->
             </el-table>
         </div>
+
+        <menu-form
+            ref="formRef"
+            :is-add="isAdd"
+            :dict-data="dictData"
+            :data="data"
+        />
     </div>
 </template>
 
 <script>
 import initData from '@/mixins/initData'
+import MenuForm from './components/MenuForm'
 
 export default {
+    components: {
+        MenuForm
+    },
     dicts: ['sys_show_hide', 'sys_menu_type', 'sys_http_method', 'sys_yes_no'],
     mixins: [initData],
     data() {

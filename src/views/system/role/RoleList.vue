@@ -22,6 +22,7 @@
                     size="medium"
                     round
                     icon="el-icon-search"
+                    disabled
                     @click="queryData"
                 >
                     查询
@@ -112,7 +113,7 @@ export default {
             _that.isDialog = true
         },
         relateUser(id, name) {
-            this.$router.push({ path: `relatedUser/${id}` })
+            this.$router.push({ path: `role/relatedUser/${id}` })
         }
     }
 }

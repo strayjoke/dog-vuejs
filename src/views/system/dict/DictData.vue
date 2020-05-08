@@ -25,6 +25,7 @@
                     size="medium"
                     round
                     icon="el-icon-search"
+                    disabled
                     @click="queryData"
                 >
                     查询
@@ -46,6 +47,7 @@
                     type="primary"
                     icon="el-icon-plus"
                     size="medium"
+                    disabled
                     @click="add"
                 >
                     新增
@@ -98,6 +100,7 @@
                         <el-button
                             size="mini"
                             type="success"
+                            disabled
                             @click="edit(scope.row)"
                         >
                             编辑
@@ -105,6 +108,7 @@
                         <el-button
                             size="mini"
                             type="danger"
+                            disabled
                             @click="destory(scope.row.id)"
                         >
                             删除

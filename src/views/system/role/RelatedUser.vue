@@ -19,6 +19,7 @@
                     size="medium"
                     round
                     icon="el-icon-search"
+                    disabled
                     @click="queryData"
                 >
                     查询
@@ -42,6 +43,7 @@
                     type="primary"
                     icon="el-icon-plus"
                     size="medium"
+                    disabled
                     @click="add"
                 >
                     分配用户
@@ -89,7 +91,7 @@ export default {
     },
     methods: {
         beforeInit() {
-            this.url = '/roleRelateUser'
+            this.url = '/getRelatedSysUsers'
             this.params = {
                 page: this.page,
                 size: this.size
