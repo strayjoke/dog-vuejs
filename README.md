@@ -1,16 +1,24 @@
 # dog-vuejs
 
-## Project setup
+## 预览
+
+
+## 克隆项目
+```
+git clone git@github.com:strayjoke/dog-vuejs.git
+```
+
+## 安装依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 开发模式启动项目
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 构建项目
 ```
 npm run build
 ```
@@ -19,6 +27,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
