@@ -3,7 +3,7 @@
 ## 预览
 项目预览: [https://strayjoke.github.io/dog-vuejs/](https://strayjoke.github.io/dog-vuejs/)
 
-服务端`nodejs`源码: [git@github.com:strayjoke/dog-nodejs.git](git@github.com:strayjoke/dog-nodejs.git)
+服务端源码: [https://github.com/strayjoke/dog-nodejs](https://github.com/strayjoke/dog-nodejs)
 
 ## 文档
 
