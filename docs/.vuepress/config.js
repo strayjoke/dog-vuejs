@@ -1,7 +1,7 @@
 module.exports = {
     title: 'dog-vuejs',
     description: 'record tips of dog-vuejs',
-    base: '/docs/',
+    base: '/',
     dest: '/dist/',
     themeConfig: {
         nav: [

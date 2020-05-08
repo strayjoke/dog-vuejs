@@ -18,7 +18,7 @@ module.exports = {
             }
         }
     },
-    publicPath: process.env.NODE_ENV === 'production' ? '/dog-vuejs' : '/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/dog-vuejs/' : '/',
     productionSourceMap: false,
     lintOnSave: process.env.NODE_ENV !== 'production',
     chainWebpack: config => {

@@ -8,6 +8,7 @@ Vue.use(VueRouter) //安装vue-router插件
 
 const router = new VueRouter({
   mode: 'history',
+  base: process.env.VUE_APP_BASE_URL,
   routes: staticRoutes,
 })
 

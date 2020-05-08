@@ -1,9 +1,12 @@
 ## 介绍
 <a href="www.strayjoke.com" target="_blank">dog-vuejs</a> 是一个使用 <a href="https://github.com/vuejs/vue"   target="_blank">vuejs</a> 和 <a href="https://github.com/ElemeFE/element" target="_blank">element-ui</a> 开发的后台前端项目。集成了用户认证，动态路由，权限验证等基础功能，可以作为企业级的中后台项目模板。
 
-在线预览：[https://github.com/strayjoke/dog-vuejs](https://github.com/strayjoke/dog-vuejs)    
+在线预览：[https://strayjoke.github.io/dog-vuejs/](https://strayjoke.github.io/dog-vuejs/)    
     
 项目源码：[https://github.com/strayjoke/dog-vuejs](https://github.com/strayjoke/dog-vuejs)
+
+服务端源码: [git@github.com:strayjoke/dog-nodejs.git](git@github.com:strayjoke/dog-nodejs.git)
+
 
 ## 安装
 ```
@@ -170,9 +173,72 @@ export function getUserList(query) {
 }
 ```
 ## mockjs
+`/src/main.js` 中,添加`mockjs`逻辑
+```
+import Mock from '@/mock'
 
-## 构建和部署
+Mock.mockData()
+```
 
+`src/mock` 中:
+```
+└─mock                                 # mock
+    ├─auth                             # auth接口
+    ├─dict                             # dict 接口
+    ├─index                            # mock 入口
+    ├─menu                             # 菜单接口
+    ├─role                             # 角色接口
+    ├─user                             # 用户接口
+```
+在 `src/mock/index.js`中:
+```
+import Auth from './auth.js'
+import Menu from './menu.js'
+import User from './user.js'
+import Role from './role.js'
+import Dict from './dict.js'
+
+export default {
+    mockData() {
+        Auth.mockData()
+        Menu.mockData()
+        User.mockData()
+        Role.mockData()
+        Dict.mockData()
+    }
+}
+```
+
+## 对接服务端
+服务端项目为 **nodejs** 项目, 源码地址: [git@github.com:strayjoke/dog-nodejs.git](git@github.com:strayjoke/dog-nodejs.git)
+另外还需要做如下配置:
+- `/src/main.js` 中,注释掉`mockjs`逻辑
+```
+import Mock from '@/mock'
+
+Mock.mockData()
+```
+
+- 在`/.env.development` 和 `/.env.production `中,替换为服务端地址,如:
+```
+VUE_APP_BASE_API='localhost:3000' 
+```
+
+
+## 部署
+- 在 `main.js`中:
+```
+Vue.config.silent = true // 取消 Vue 所有的日志与警告
+
+Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示
+```
+
+- 在 `vue.config.js`中:
+```
+module.exports = {
+    productionSourceMap: false, //禁止查看源码
+}
+```
 
 ## 环境变量
 - 环境变量的引入需要结合vue-cli 中对模式的定义。模式共有：`development`、`production`、`test`。
@@ -188,7 +254,7 @@ VUE_APP_TIMEOUT=5000
 
 在 `.env.production` 中定义环境变量：
 ```
-VUE_APP_BASE_API='http://localhost:3000'
+VUE_APP_BASE_API='http://localhost:3000'  # 对接nodejs服务端
 VUE_APP_BASE_URL='/'  
 VUE_APP_TIMEOUT=5000
 ```
@@ -200,3 +266,5 @@ const service = axios.create({
     timeout: process.env.VUE_APP_TIMEOUT // request timeout
 })
 ```
+
+

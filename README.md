@@ -1,7 +1,9 @@
 # dog-vuejs
 
 ## 预览
+[项目预览](https://strayjoke.github.io/dog-vuejs/)
 
+## 文档
 
 ## 克隆项目
 ```

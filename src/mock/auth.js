@@ -14,7 +14,7 @@ export default {
 
         Mock.mock(/api\/auth\/info/, {
             msg: 'success',
-            data: { "roles": [], "id": 1, "loginName": "admin", "name": "admin" }
+            data: { "roles": ['admin'], "id": 1, "loginName": "admin", "name": "admin" }
         })
 
         Mock.mock(/api\/auth\/permissions/, {

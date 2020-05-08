@@ -23,7 +23,7 @@ Object.keys(filters).forEach(key => {
 
 
 
-// Vue.config.silent = true // 取消 Vue 所有的日志与警告
+Vue.config.silent = true // 取消 Vue 所有的日志与警告
 
 Vue.config.productionTip = false
 
