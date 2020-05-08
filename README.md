@@ -6,6 +6,7 @@
 服务端源码: [https://github.com/strayjoke/dog-nodejs](https://github.com/strayjoke/dog-nodejs)
 
 ## 文档
+文档: [https://strayjoke.github.io/dog-vuejs-site/](https://strayjoke.github.io/dog-vuejs-site/)
 
 ## 克隆项目
 ```
